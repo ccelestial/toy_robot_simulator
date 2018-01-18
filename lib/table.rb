@@ -1,9 +1,7 @@
 class Table
-  def self.generate
-    "0 0 0 0 0\n"\
-    "0 0 0 0 0\n"\
-    "0 0 0 0 0\n"\
-    "0 0 0 0 0\n"\
-    "0 0 0 0 0\n"
+  attr_accessor :matrix
+
+  def initialize height:, width:
+    @matrix = Array.new(height) { Array.new(width, 0) }
   end
 end
