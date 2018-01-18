@@ -1,0 +1,1 @@
+Location = Struct.new(:lat, :long)
