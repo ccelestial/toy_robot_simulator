@@ -32,7 +32,7 @@ class Command
   end
 
   def move!
-    new_location = @status.location
+    new_location = Location.new(@status.location.x, @status.location.y)
 
     case @status.direction.facing
       when "NORTH"
@@ -44,8 +44,8 @@ class Command
       when "WEST"
         new_location.x -= 1
     end
-
-    @status.location = new_location unless @table.matrix[new_location.y][new_location.x].  nil?
+  
+    @status.location = new_location if (new_location.x >= 0 && new_location.y >= 0) && @table.matrix[new_location.y][new_location.x] == 0
 
     @status
   end
